@@ -1,0 +1,4 @@
+name: Aromr
+version: ${project.version}
+main: com.boyboy0710.aromr.Main
+api-version: 1.16
