@@ -13,12 +13,14 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class Main extends JavaPlugin implements Listener{
 
     public void onEnable() {
         System.out.println("----------------------------------------------------------------------");
         System.out.println("            armor 를러그인을 성공적으로 불러왔습니다");
-        System.out.println("               플러그인 제작자ㅣ:boyboy0710");
+        System.out.println("               플러그인 제작자ㅣ:booyboy0710");
         System.out.println("    죄신버전 다운사이트 : https://github.com/boyboy0710/Armor");
         System.out.println(" 선택 플러그인 : mob (다운사이트 : https://github.com/boyboy0710/mob)");
         System.out.println("----------------------------------------------------------------------");
@@ -45,7 +47,7 @@ public final class Main extends JavaPlugin implements Listener{
 
 
 
-    public boolean onCommand1(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         Player p = (Player) sender;
 
         if(cmd.getName().equalsIgnoreCase("time_and_weather")) {
@@ -62,7 +64,7 @@ public final class Main extends JavaPlugin implements Listener{
         }
 
         if(cmd.getName().equalsIgnoreCase("reloed_Health")) {
-            if(p.getInventory().getBoots().getType() == Material.NETHERITE_BOOTS) {
+            if(Objects.requireNonNull(p.getInventory().getBoots()).getType() == Material.NETHERITE_BOOTS) {
                 b = 4;
             }
             if(p.getInventory().getBoots().getType() == Material.DIAMOND_BOOTS) {
@@ -86,7 +88,7 @@ public final class Main extends JavaPlugin implements Listener{
             }
 
 
-            if(p.getInventory().getChestplate().getType() == Material.NETHERITE_CHESTPLATE) {
+            if(Objects.requireNonNull(p.getInventory().getChestplate()).getType() == Material.NETHERITE_CHESTPLATE) {
                 c = 4;
             }
             if(p.getInventory().getChestplate().getType() == Material.DIAMOND_CHESTPLATE) {
@@ -108,7 +110,7 @@ public final class Main extends JavaPlugin implements Listener{
                 c = 0;
             }
 
-            if(p.getInventory().getHelmet().getType() == Material.AIR) {
+            if(Objects.requireNonNull(p.getInventory().getHelmet()).getType() == Material.AIR) {
                 h = 0;
             }
             if(p.getInventory().getHelmet().getType() == Material.NETHERITE_HELMET) {
@@ -131,7 +133,7 @@ public final class Main extends JavaPlugin implements Listener{
             }
 
 
-            if(p.getInventory().getLeggings().getType() == Material.AIR) {
+            if(Objects.requireNonNull(p.getInventory().getLeggings()).getType() == Material.AIR) {
                 l = 0;
             }
             if(p.getInventory().getLeggings().getType() == Material.NETHERITE_LEGGINGS) {
@@ -185,7 +187,7 @@ public final class Main extends JavaPlugin implements Listener{
     @EventHandler
     public void onInteract(PlayerRespawnEvent ev) {
         Player p = ev.getPlayer();
-        if(p.getInventory().getBoots().getType() == Material.NETHERITE_BOOTS) {
+        if(Objects.requireNonNull(p.getInventory().getBoots()).getType() == Material.NETHERITE_BOOTS) {
             b = 4;
         }
         if(p.getInventory().getBoots().getType() == Material.DIAMOND_BOOTS) {
@@ -208,7 +210,7 @@ public final class Main extends JavaPlugin implements Listener{
         }
 
 
-        if(p.getInventory().getChestplate().getType() == Material.NETHERITE_CHESTPLATE) {
+        if(Objects.requireNonNull(p.getInventory().getChestplate()).getType() == Material.NETHERITE_CHESTPLATE) {
             c = 4;
         }
         if(p.getInventory().getChestplate().getType() == Material.DIAMOND_CHESTPLATE) {
@@ -230,7 +232,7 @@ public final class Main extends JavaPlugin implements Listener{
             c = 0;
         }
 
-        if(p.getInventory().getHelmet().getType() == Material.AIR) {
+        if(Objects.requireNonNull(p.getInventory().getHelmet()).getType() == Material.AIR) {
             h = 0;
         }
         if(p.getInventory().getHelmet().getType() == Material.NETHERITE_HELMET) {
@@ -253,7 +255,7 @@ public final class Main extends JavaPlugin implements Listener{
         }
 
 
-        if(p.getInventory().getLeggings().getType() == Material.AIR) {
+        if(Objects.requireNonNull(p.getInventory().getLeggings()).getType() == Material.AIR) {
             l = 0;
         }
         if(p.getInventory().getLeggings().getType() == Material.NETHERITE_LEGGINGS) {
